@@ -4,6 +4,7 @@
 @import 'style/colors';
 @import 'style/main';
 @import 'style/typography';
+@import 'style/mixins';
 
 //для удобства тестирования верстки
 .wrapper {
@@ -15,8 +16,6 @@
     width: 100%;
     min-width: 240px;
     padding: 8px 10px;
-    background-color: $back;
-    color: $white;
     border-radius: 6px;
     overflow: hidden;
     background-image: url(./img/alpaca.jpg);
@@ -90,7 +89,6 @@
         }
 
         &--start, &--end, &--start-end, &--between {
-            background-color: $blue;
             position: relative;
         }
 
@@ -98,7 +96,6 @@
             button {
                 width: 91%;
                 height: 91%;
-                background-color: $black-opacity-30;
                 border-radius: 50%;
                 border: 1px solid $black-opacity-10;
             }
@@ -110,8 +107,6 @@
 
         &--start-end { border-radius: 50% }
 
-        &--inactive { color: $white-opacity-50 }
-
         &--between::before, &--end::after {
             content: '';
             width: 20%;
@@ -119,7 +114,6 @@
             position: absolute;
             top: 0;
             right: 100%;
-            background-color: $blue;
         }
 
         &--between::after, &--start::after {
@@ -129,7 +123,26 @@
             position: absolute;
             top: 0;
             left: 100%;
-            background-color: $blue;
+        }
+    }
+
+    //темизация с помощью модификаторов
+    &--theme-dark {
+        background-color: $black-opacity-90;
+        color: $white;
+
+        .calendar__day {
+            &--start, &--end, &--start-end, &--between {
+                background-color: $blue;
+            }
+    
+            &--start, &--end, &--start-end {
+                button { background-color: $black-opacity-30 }
+            }
+    
+            &--inactive { color: $white-opacity-50 }
+    
+            &--between::before, &--end::after, &--between::after, &--start::after { background-color: $blue }
         }
     }
 }
