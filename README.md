@@ -6,15 +6,15 @@
 
 ### Запуск сервера для разработки
 ```shell
-npm run start
+yarn run start
 ```
 
 ### Сборка проекта без оптимизации
 ```shell
-npm run build-dev
+yarn run build-dev
 ```
 
 ### Сборка проекта с оптимизацией
 ```shell
-npm run build-prod
+yarn run build-prod
 ```
