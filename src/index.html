@@ -1,13 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/favicon.png" type="image/png">
-  <title>Alpaca calendar</title>
-</head>
-<body>
-  <h1>Test</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Alpaca calendar</title>
+  </head>
+  <body>
+    <!-- обертка для соблюдения размеров из макета -->
+    <div class="wrapper">
+      <div class="calendar">
+        <div class="calendar__header">
+          <button type="button" class="calendar__prev-month-button" aria-label="предыдущий месяц">
+            <img src="./img/arrow.svg" alt="иконка стрелки">
+          </button>
+          <h4 tabindex="0" aria-label="текущий месяц январь" class="calendar__title">январь</h4>
+          <button type="button" class="calendar__next-month-button" aria-label="следующий месяц">
+            <img src="./img/arrow.svg" alt="иконка стрелки">
+          </button>
+        </div>
+        
+        <div class="calendar__days">
+          <div class="calendar__day">
+            <button aria-label="январь, 1">1</button>
+          </div>
+          <div class="calendar__day calendar__day--start-end">
+            <button aria-label="январь, 2">2</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 3">3</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 4">4</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 5">5</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 6">6</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 7">7</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 8">8</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 9">9</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 10">10</button>
+          </div>
+
+          <div class="calendar__day">
+            <button aria-label="январь, 11">11</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 12">12</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 13">13</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 14">14</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 15">15</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 16">16</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 17">17</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 18">18</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 19">19</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 20">20</button>
+          </div>
+
+          <div class="calendar__day">
+            <button aria-label="январь, 21">21</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 22">22</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 23">23</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 24">24</button>
+          </div>
+          <div class="calendar__day">
+            <button aria-label="январь, 25">25</button>
+          </div>
+          <div class="calendar__day calendar__day--start">
+            <button aria-label="январь, 26">26</button>
+          </div>
+          <div class="calendar__day calendar__day--between">
+            <button aria-label="январь, 27">27</button>
+          </div>
+          <div class="calendar__day calendar__day--between">
+            <button aria-label="январь, 28">28</button>
+          </div>
+          <div class="calendar__day calendar__day--between">
+            <button aria-label="январь, 29">29</button>
+          </div>
+          <div class="calendar__day calendar__day--between">
+            <button aria-label="январь, 30">30</button>
+          </div>
+          <div class="calendar__day calendar__day--end">
+            <button aria-label="январь, 31">31</button>
+          </div>
+
+          <div class="calendar__day calendar__day--inactive">
+            <button aria-label="февраль, 1">1</button>
+          </div>
+          <div class="calendar__day calendar__day--inactive">
+            <button aria-label="февраль, 2">2</button>
+          </div>
+          <div class="calendar__day calendar__day--inactive">
+            <button aria-label="февраль, 3">3</button>
+          </div>
+          <div class="calendar__day calendar__day--inactive">
+            <button aria-label="февраль, 4">4</button>
+          </div>
+        </div>
+    </div>
+  </body>
 </html>
+
+<!-- 
+  Классы для стилизации.
+
+  "calendar__day--start-end" -- для стилизации одного дня.
+
+  "calendar__day--start" -- начало выбранного периода.
+  "calendar__day--between" -- промежуточные дни между начальной и конечной датой.
+  "calendar__day--end" -- конечная дата выбранного периода.
+-->

@@ -4,3 +4,132 @@
 @import 'style/colors';
 @import 'style/main';
 @import 'style/typography';
+
+//для удобства тестирования верстки
+.wrapper {
+    width: 100%;
+    max-width: 320px;
+}
+
+.calendar {
+    width: 100%;
+    min-width: 240px;
+    padding: 8px 10px;
+    background-color: $back;
+    color: $white;
+    border-radius: 6px;
+    overflow: hidden;
+    background-image: url(./img/alpaca.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: color;
+
+    &__header {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__prev-month-button, &__next-month-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    &__prev-month-button {
+        img { transform: rotate(180deg) }
+    }
+
+    &__title {
+        @include roboto-medium_12-14;
+        text-transform: uppercase;
+
+        //защита от перенаполнения текстом
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        word-break: break-word;
+    }
+
+    &__days {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+
+        .calendar__day--between:nth-child(7n)::after, .calendar__day--start:nth-child(7n)::after {
+            width: 20px;
+        }
+
+        .calendar__day--between:nth-child(7n + 1)::before, .calendar__day--end:nth-child(7n + 1)::after {
+            width: 20px;
+        }
+    }
+
+    &__day {
+        @include roboto-medium_12-24;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        aspect-ratio: 1 / 1;
+
+        button {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        &--start, &--end, &--start-end, &--between {
+            background-color: $blue;
+            position: relative;
+        }
+
+        &--start, &--end, &--start-end {
+            button {
+                width: 91%;
+                height: 91%;
+                background-color: $black-opacity-30;
+                border-radius: 50%;
+                border: 1px solid $black-opacity-10;
+            }
+        }
+
+        &--start { border-radius: 50% 0 0 50% }
+
+        &--end { border-radius: 0 50% 50% 0 }
+
+        &--start-end { border-radius: 50% }
+
+        &--inactive { color: $white-opacity-50 }
+
+        &--between::before, &--end::after {
+            content: '';
+            width: 20%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 100%;
+            background-color: $blue;
+        }
+
+        &--between::after, &--start::after {
+            content: '';
+            width: 20%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: $blue;
+        }
+    }
+}
