@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "",
+  "license": "MIT",
   "browserslist": [
     ">0.2%",
     "not dead",
